@@ -1,5 +1,10 @@
 # Notes de version
 
+## 0.1.0-alpha.3
+
+- l’onglet « Maison » devient « Course / Recette » et s’affiche sur deux lignes ;
+- le domaine technique et les données Maison restent inchangés.
+
 ## 0.1.0-alpha.2
 
 - chaîne de fabrication et d’installation séparée des sources TypeScript ;

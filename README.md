@@ -13,12 +13,12 @@ Web et les mises à jour demandées nécessitent Internet.
 
 - **Aujourd’hui** rassemble ce qui mérite votre attention.
 - **Agenda** organise tâches, rendez-vous et récurrences.
-- **Maison** relie courses, menus, préparations, restes et réserve.
+- **Course / Recette** relie courses, menus, préparations, restes et réserve.
 - **Budget** distingue réalisé, prévisionnel, enveloppes et provisions.
 - **Chat** conserve des conversations privées par profil.
 - **Veille** suit des sources et prépare des synthèses personnelles.
 
-Friday est conçu pour un foyer de deux adultes : Agenda, Maison et Budget sont
+Friday est conçu pour un foyer de deux adultes : Agenda, Course / Recette et Budget sont
 partagés ; Chat et Veille restent privés par profil.
 
 ## Commencer

@@ -2,7 +2,7 @@
 
 - **Aujourd’hui** : tâches urgentes, menus, courses et informations utiles.
 - **Agenda** : vues liste, semaine et mois, responsables et récurrences.
-- **Maison** : courses, menus et réserve dans un même espace.
+- **Course / Recette** : courses, menus et réserve dans un même espace.
 - **Budget** : opérations, enveloppes, provisions et clôture.
 - **Chat** : conversations privées avec choix du mode local ou Web.
 - **Veille** : dossiers, sources, articles et synthèses privées.
