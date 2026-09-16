@@ -1,12 +1,14 @@
 # Utiliser Friday
 
-Statut documentaire : actif.
+- **Aujourd’hui** : tâches urgentes, menus, courses et informations utiles.
+- **Agenda** : vues liste, semaine et mois, responsables et récurrences.
+- **Maison** : courses, menus et réserve dans un même espace.
+- **Budget** : opérations, enveloppes, provisions et clôture.
+- **Chat** : conversations privées avec choix du mode local ou Web.
+- **Veille** : dossiers, sources, articles et synthèses privées.
 
-Friday est disponible sur le PC et, sur le réseau privé du foyer, à l'adresse
-stable `https://192.168.1.14:8443`. Les appareils déjà appairés conservent cette
-origine. Les commandes **Démarrer Friday**, **Arrêter Friday**, **État Friday**
-et **Diagnostic Friday** sont installées sur le Bureau.
+Les données partagées se synchronisent lorsque le Hub redevient joignable. Une
+écriture encore locale apparaît comme en attente ; ne videz pas les données du
+navigateur pour résoudre une panne réseau.
 
-La version réellement exécutée apparaît dans les réglages et dans
-`/api/health`. Un arrêt du PC n'efface ni la base SQLite ni les données hors
-ligne des téléphones.
+La version exécutée apparaît dans les réglages et dans `/api/health`.

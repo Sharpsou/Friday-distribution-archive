@@ -22,6 +22,15 @@ function Set-FridayEnvironment {
   $env:FRIDAY_CHAT_ENABLED = ([string][bool]$Configuration.features.chatEnabled).ToLowerInvariant()
   $env:FRIDAY_CHAT_AXES_ENABLED = ([string][bool]$Configuration.features.chatAxesEnabled).ToLowerInvariant()
   $env:FRIDAY_CHAT_PIPELINE = [string]$Configuration.features.chatPipeline
+  $robotConfigurationPath = Join-Path $DataDirectory 'robot\hub.json'
+  $robotEnabledProperty = $Configuration.features.PSObject.Properties['robotEnabled']
+  $robotUiEnabled = if ($robotEnabledProperty) {
+    [bool]$robotEnabledProperty.Value
+  }
+  else {
+    Test-Path -LiteralPath $robotConfigurationPath -PathType Leaf
+  }
+  $env:FRIDAY_ROBOT_UI_ENABLED = ([string]$robotUiEnabled).ToLowerInvariant()
   $env:FRIDAY_OLLAMA_URL = [string]$Configuration.ollama.url
   $env:FRIDAY_GROCERY_CLASSIFICATION_MODEL = [string]$Configuration.models.groceryClassification
   $env:FRIDAY_GROCERY_PHOTO_MODEL = [string]$Configuration.models.groceryPhoto
@@ -39,7 +48,7 @@ function Set-FridayEnvironment {
     $env:FRIDAY_TAVILY_API_KEY = (Get-Content -LiteralPath $tavilyPath -Raw).Trim()
   }
 
-  $robotPath = Join-Path $DataDirectory 'robot\hub.json'
+  $robotPath = $robotConfigurationPath
   $env:FRIDAY_ROBOT_MODE = 'disabled'
   if (Test-Path -LiteralPath $robotPath) {
     $robot = Get-Content -LiteralPath $robotPath -Raw | ConvertFrom-Json

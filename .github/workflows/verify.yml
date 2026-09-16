@@ -1,0 +1,23 @@
+name: Verify distribution
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify public repository
+        shell: powershell
+        run: ./tests/Test-FridayDistribution.ps1
+      - name: Verify configuration scripts
+        shell: powershell
+        run: ./tests/Test-FridayConfiguration.ps1
+      - name: Verify installation and rollback
+        shell: powershell
+        run: ./tests/Test-FridayInstaller.ps1

@@ -12,16 +12,21 @@ if (-not (Test-Path -LiteralPath $configPath)) {
   $configuration = [ordered]@{
     format = 1
     dataDirectory = $DataDirectory
-    host = '0.0.0.0'
+    host = '127.0.0.1'
     port = 8443
-    publicOrigin = 'https://192.168.1.14:8443'
-    trustedOrigins = @('https://127.0.0.1:8443', 'https://192.168.1.14:8443')
+    publicOrigin = 'http://127.0.0.1:8443'
+    trustedOrigins = @('http://127.0.0.1:8443')
     tls = [ordered]@{
-      enabled = $true
+      enabled = $false
       certificatePath = Join-Path $DataDirectory 'certificates\friday-lan.pem'
       keyPath = Join-Path $DataDirectory 'secrets\friday-lan-key.pem'
     }
-    features = [ordered]@{ chatEnabled = $true; chatAxesEnabled = $true; chatPipeline = 'unified' }
+    features = [ordered]@{
+      chatEnabled = $true
+      chatAxesEnabled = $true
+      chatPipeline = 'unified'
+      robotEnabled = $false
+    }
     ollama = [ordered]@{ url = 'http://127.0.0.1:11434'; required = $false }
     models = [ordered]@{ groceryClassification = 'ministral-3:8b'; groceryPhoto = 'qwen3.5:9b-q4_K_M' }
   }

@@ -9,3 +9,12 @@ release active. Si le démarrage échoue, la release précédente redevient acti
 
 Un `git pull` ne met jamais à jour le runtime installé. Il ne protège pas les
 téléchargements incomplets, les modules natifs ni le retour arrière.
+
+Pour désinstaller le runtime sans supprimer les données :
+
+```powershell
+D:\Friday\installer\Uninstall-Friday.ps1
+```
+
+Une future réinstallation peut réutiliser `D:\FridayData` si sa base, son secret
+d’authentification et sa configuration ont été conservés ensemble.

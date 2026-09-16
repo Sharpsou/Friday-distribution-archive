@@ -1,22 +1,27 @@
-# Installer Friday sous Windows
+# Installation et premier démarrage
 
-Statut documentaire : actif.
-
-Prérequis : Windows 11 x64 et un artefact Friday vérifié. L'installation par
-défaut utilise `D:\Friday` pour le programme et `D:\FridayData` pour les
-données. Elle ne compile rien et ne dépend pas du dépôt TypeScript privé.
-
-Depuis PowerShell :
+Le dépôt public contient les installateurs, pas le logiciel compilé. Obtenez un
+artefact Friday auprès du canal autorisé, accompagné de son SHA-256.
 
 ```powershell
-D:\Friday\installer\Install-Friday.ps1 -PackagePath C:\chemin\friday.zip
+D:\Friday\installer\Install-Friday.ps1 `
+  -PackagePath C:\chemin\friday.zip `
+  -ExpectedArchiveSha256 <empreinte-attendue>
 ```
 
-Le script vérifie chaque SHA-256 du manifeste, installe dans un nouveau dossier,
-conserve la version précédente et teste `/api/health`. En cas d'échec, il remet
-automatiquement la release précédente. Utiliser `Register-FridayTask.ps1` pour
-le démarrage à l'ouverture de session et `Install-FridayShortcuts.ps1` pour les
-raccourcis.
+L’installateur vérifie le manifeste et chaque fichier, installe la release dans
+`runtime\releases`, bascule `runtime\active.json`, puis contrôle `/api/health`.
+En cas d’échec, il restaure automatiquement la release précédente.
 
-Ollama, ses modèles, Chrome et l'environnement Python/OpenCV du Robot sont
-facultatifs et restent externes à l'artefact.
+Une installation neuve écoute seulement sur `http://127.0.0.1:8443`. Ouvrez
+cette adresse sur le PC, créez le propriétaire, puis suivez le
+[guide réseau](reseau-et-pwa.md) avant d’utiliser un téléphone.
+
+Pour terminer l’installation Windows :
+
+```powershell
+D:\Friday\installer\Register-FridayTask.ps1
+D:\Friday\installer\Install-FridayShortcuts.ps1
+```
+
+L’installation ne compile rien et ne requiert aucun dépôt de sources.
