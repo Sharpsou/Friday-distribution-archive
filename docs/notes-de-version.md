@@ -1,5 +1,14 @@
 # Notes de version
 
+## 0.1.0-alpha.4
+
+- l’activation Robot du foyer est conservée sur chaque PWA après une première
+  lecture valide de la configuration produit ;
+- une indisponibilité transitoire du Hub pendant un déploiement ne masque plus
+  l’onglet Robot ;
+- une réponse serveur explicite désactivant Robot reste autoritaire et les
+  nouvelles installations continuent de masquer cette fonction par défaut.
+
 ## 0.1.0-alpha.3
 
 - l’onglet « Maison » devient « Course / Recette » et s’affiche sur deux lignes ;
