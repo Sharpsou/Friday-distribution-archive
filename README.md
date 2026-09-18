@@ -1,5 +1,10 @@
 # Friday — le quotidien familial, chez vous
 
+> **Archive du dépôt de distribution — 18 septembre 2026.** Friday est revenu
+> dans un dépôt privé unique réunissant sources, documentation, installateurs et
+> Releases. Ce dépôt conserve l’historique de l’ancienne séparation ; il ne
+> reçoit plus d’évolution et ne fournit aucun binaire public.
+
 Friday réunit les tâches, l’agenda, les courses, les menus, la réserve, le
 budget, le Chat local et la veille personnelle dans une PWA utilisable sur PC,
 Android et iPhone.
